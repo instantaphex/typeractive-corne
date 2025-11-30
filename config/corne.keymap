@@ -8,6 +8,13 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+&mt {
+    tapping-term-ms = <200>;
+    quick-tap-ms = <0>;
+    flavor = "balanced";
+};
+
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -18,16 +25,47 @@
         };
     };
 
+    macros {
+        git_push_ob: git_push_ob {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp I &kp T &kp SPACE &kp P &kp U &kp S &kp H &kp SPACE &kp MINUS &kp U &kp SPACE &kp O &kp R &kp I &kp G &kp I &kp N &kp SPACE &kp DLLR &kp LPAR &kp B &kp R &kp A &kp N &kp C &kp H &kp RPAR>;
+            label = "GIT_PUSH_OB";
+        };
+
+        git_commit_m: git_commit_m {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp I &kp T &kp SPACE &kp C &kp O &kp M &kp M &kp I &kp T &kp SPACE &kp MINUS &kp M &kp SPACE &kp DQT &kp DQT &kp LEFT>;
+            label = "GIT_COMMIT_M";
+        };
+
+        git_pull: git_pull {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp I &kp T &kp SPACE &kp P &kp U &kp L &kp L>;
+            label = "GIT_PULL";
+        };
+
+        js_if_stmt: js_if_stmt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp I &kp F &kp SPACE &kp LPAR &kp RPAR &kp SPACE &kp LBRC &kp RBRC &kp LEFT_ARROW &kp LEFT &kp LEFT_ARROW &kp LEFT>;
+            label = "JS_IF_STMT";
+        };
+
+        js_arrow_fn: js_arrow_fn {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR &kp RPAR &kp SPACE &kp EQUAL &kp GT &kp SPACE &kp LBRC &kp RET &kp RET &kp RBRC &kp UP_ARROW &kp TAB>;
+            label = "JS_ARROW_FN";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-
             display-name = "Home";
             bindings = <
 &caps_word         &kp Q    &kp W           &kp E           &kp R             &kp T         &kp Y         &kp U              &kp I            &kp O            &kp P            &kp MINUS
@@ -38,12 +76,6 @@
         };
 
         numbers {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
             display-name = "numbers";
             bindings = <
 &trans  &trans  &trans        &trans     &trans          &trans      &trans        &kp N7        &kp N8        &kp N9        &trans  &trans
@@ -54,12 +86,6 @@
         };
 
         symbols {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
             display-name = "Symbols";
             bindings = <
 &trans  &trans           &kp LESS_THAN  &kp GREATER_THAN  &kp DLLR     &kp PRCNT    &kp AMPERSAND  &kp DOLLAR  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans  &trans
@@ -78,7 +104,8 @@
             >;
         };
 
-        layer_4 {
+        function {
+            display-name = "Function"
             bindings = <
 &trans  &trans  &trans    &trans     &trans     &trans      &kp F9  &kp F10  &kp F11  &kp F12  &trans  &trans
 &trans  &trans  &kp LALT  &kp LCTRL  &kp LSHFT  &kp LGUI    &kp F5  &kp F6   &kp F7   &kp F8   &trans  &trans
@@ -87,7 +114,8 @@
             >;
         };
 
-        layer_5 {
+        utils {
+            display-name = "Utils"
             bindings = <
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans        &trans        &trans        &trans        &trans        &trans    &trans  &trans  &trans  &trans  &trans  &trans
