@@ -8,18 +8,37 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-&mt {
-  flavor = "tap-preferred";
-  tapping-term-ms = <175>;
-  quick-tap-ms = <30>;
-
-  /* Big win: only treat it as a HOLD when you press a key on the other hand */
-  hold-trigger-key-positions = <6 7 8 9 10 11  18 19 20 21 22 23  30 31 32 33 34 35>;
-  /* ^ adjust key positions to “the opposite half” for that key */
-};
-
 
 / {
+    behaviors {
+      hm_l: hm_l {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <175>;
+        quick-tap-ms = <30>;
+        // Optional but often GREAT for HRMs:
+        hold-trigger-on-release;
+        bindings = <&kp>, <&kp>;
+
+        // allow holds only when next key is on RIGHT side (including right thumbs)
+        hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+      };
+
+      hm_r: hm_r {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <175>;
+        quick-tap-ms = <30>;
+        hold-trigger-on-release;
+        bindings = <&kp>, <&kp>;
+
+        // allow holds only when next key is on LEFT side (including left thumbs)
+        hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+      };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -73,7 +92,7 @@
             display-name = "Home";
             bindings = <
 &caps_word         &kp Q    &kp W           &kp E           &kp R             &kp T         &kp Y         &kp U              &kp I            &kp O            &kp P            &kp MINUS
-&kp ESCAPE         &lt 3 A  &mt LEFT_ALT S  &mt LCTRL D     &mt LEFT_SHIFT F  &mt LGUI G    &mt RGUI H    &mt RIGHT_SHIFT J  &mt RCTRL K      &mt RIGHT_ALT L  &lt 3 SEMICOLON  &kp SQT
+&kp ESCAPE         &lt 3 A  &hm_l LEFT_ALT S  &hm_l LCTRL D     &hm_l LEFT_SHIFT F  &hm_l LGUI G    &hm_r RGUI H    &hm_r RIGHT_SHIFT J  &hm_r RCTRL K      &hm_r RIGHT_ALT L  &lt 3 SEMICOLON  &kp SQT
 &kp LC(LA(LSHFT))  &kp Z    &kp X           &kp C           &kp V             &kp B         &kp N         &kp M              &kp COMMA        &kp DOT          &kp FSLH         &kp RG(RS(RC(RIGHT_ALT)))
                                             &lt 2 LEFT_GUI  &lt 4 BACKSPACE   &lt 5 TAB     &lt 3 RETURN  &lt 1 SPACE        &lt 2 RIGHT_ALT
             >;
