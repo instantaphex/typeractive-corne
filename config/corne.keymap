@@ -8,35 +8,38 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-
 / {
     behaviors {
-      hm_l: hm_l {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "tap-preferred";
-        tapping-term-ms = <175>;
-        quick-tap-ms = <30>;
-        // Optional but often GREAT for HRMs:
-        hold-trigger-on-release;
-        bindings = <&kp>, <&kp>;
+        hm_l: hm_l {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <175>;
+            quick-tap-ms = <30>;
 
-        // allow holds only when next key is on RIGHT side (including right thumbs)
-        hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
-      };
+            // Optional but often GREAT for HRMs:
 
-      hm_r: hm_r {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "tap-preferred";
-        tapping-term-ms = <175>;
-        quick-tap-ms = <30>;
-        hold-trigger-on-release;
-        bindings = <&kp>, <&kp>;
+            hold-trigger-on-release;
+            bindings = <&kp>, <&kp>;
 
-        // allow holds only when next key is on LEFT side (including left thumbs)
-        hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
-      };
+            // allow holds only when next key is on RIGHT side (including right thumbs)
+
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+        };
+
+        hm_r: hm_r {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <175>;
+            quick-tap-ms = <30>;
+            hold-trigger-on-release;
+            bindings = <&kp>, <&kp>;
+
+            // allow holds only when next key is on LEFT side (including left thumbs)
+
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+        };
     };
 
     combos {
@@ -91,10 +94,10 @@
         default_layer {
             display-name = "Home";
             bindings = <
-&caps_word         &kp Q    &kp W           &kp E           &kp R             &kp T         &kp Y         &kp U              &kp I            &kp O            &kp P            &kp MINUS
-&kp ESCAPE         &lt 3 A  &hm_l LEFT_ALT S  &hm_l LCTRL D     &hm_l LEFT_SHIFT F  &hm_l LGUI G    &hm_r RGUI H    &hm_r RIGHT_SHIFT J  &hm_r RCTRL K      &hm_r RIGHT_ALT L  &lt 3 SEMICOLON  &kp SQT
-&kp LC(LA(LSHFT))  &kp Z    &kp X           &kp C           &kp V             &kp B         &kp N         &kp M              &kp COMMA        &kp DOT          &kp FSLH         &kp RG(RS(RC(RIGHT_ALT)))
-                                            &lt 2 LEFT_GUI  &lt 4 BACKSPACE   &lt 5 TAB     &lt 3 RETURN  &lt 1 SPACE        &lt 2 RIGHT_ALT
+&caps_word         &kp Q    &kp W             &kp E           &kp R               &kp T           &kp Y         &kp U                &kp I            &kp O              &kp P            &kp MINUS
+&kp ESCAPE         &lt 2 A  &hm_l LEFT_ALT S  &hm_l LCTRL D   &hm_l LEFT_SHIFT F  &hm_l LGUI G    &hm_r RGUI H  &hm_r RIGHT_SHIFT J  &hm_r RCTRL K    &hm_r RIGHT_ALT L  &lt 2 SEMICOLON  &kp SQT
+&kp LC(LA(LSHFT))  &kp Z    &kp X             &kp C           &kp V               &kp B           &kp N         &kp M                &kp COMMA        &kp DOT            &kp FSLH         &kp RG(RS(RC(RIGHT_ALT)))
+                                              &lt 2 LEFT_GUI  &lt 4 BACKSPACE     &lt 5 TAB       &lt 3 RETURN  &lt 1 SPACE          &lt 2 RIGHT_ALT
             >;
         };
 
@@ -119,7 +122,7 @@
         };
 
         nav {
-          display-name = "Nav";
+            display-name = "Nav";
             bindings = <
 &trans  &trans  &trans        &trans            &trans          &trans      &trans    &trans    &trans        &trans     &trans  &trans
 &trans  &trans  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp LGUI    &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans  &trans
@@ -141,10 +144,10 @@
         utils {
             display-name = "Utils";
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans        &trans        &trans        &trans        &trans        &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans        &trans        &trans        &trans        &trans        &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                                          &trans        &trans        &trans    &trans  &trans  &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans    &trans  &trans        &trans         &trans     &trans  &trans
+&trans        &trans        &trans        &js_arrow_fn  &js_if_stmt   &trans    &trans  &git_push_ob  &git_commit_m  &git_pull  &trans  &trans
+&trans        &trans        &trans        &trans        &trans        &trans    &trans  &trans        &trans         &trans     &trans  &trans
+                                          &trans        &trans        &trans    &trans  &trans        &trans
             >;
         };
     };
