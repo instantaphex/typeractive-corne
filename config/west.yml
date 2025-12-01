@@ -2,15 +2,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: instantaphex
-      url-base: https://github.com/instantaphex
+    # - name: instantaphex
+    #   url-base: https://github.com/instantaphex
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: v0.3
       import: app/west.yml
-    - name: nice-view-mod
-      remote: instantaphex
-      revision: main
+    # - name: nice-view-mod
+    #   remote: instantaphex
+    #   revision: main
   self:
     path: config
