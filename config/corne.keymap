@@ -97,7 +97,7 @@
 &caps_word         &kp Q    &kp W             &kp E           &kp R               &kp T           &kp Y         &kp U                &kp I            &kp O              &kp P            &kp MINUS
 &kp ESCAPE         &lt 2 A  &hm_l LEFT_ALT S  &hm_l LCTRL D   &hm_l LEFT_SHIFT F  &hm_l LGUI G    &hm_r RGUI H  &hm_r RIGHT_SHIFT J  &hm_r RCTRL K    &hm_r RIGHT_ALT L  &lt 2 SEMICOLON  &kp SQT
 &kp LC(LA(LSHFT))  &kp Z    &kp X             &kp C           &kp V               &kp B           &kp N         &kp M                &kp COMMA        &kp DOT            &kp FSLH         &kp RG(RS(RC(RIGHT_ALT)))
-                                              &lt 2 LEFT_GUI  &lt 4 BACKSPACE     &lt 5 TAB       &lt 3 RETURN  &lt 1 SPACE          &lt 2 RIGHT_ALT
+                                              &lt 2 LEFT_GUI  &lt 4 BACKSPACE     &lt 5 TAB       &mo 3         &lt 1 SPACE          &lt 2 RIGHT_ALT
             >;
         };
 
@@ -114,9 +114,9 @@
         symbols {
             display-name = "Symbols";
             bindings = <
-&trans  &trans           &kp LESS_THAN  &kp GREATER_THAN  &kp DLLR     &kp PRCNT    &kp AMPERSAND  &kp DOLLAR  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans  &trans
-&trans  &kp EXCLAMATION  &kp MINUS      &kp PLUS          &kp EQUAL    &kp HASH     &kp PIPE       &kp COLON   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &trans
-&trans  &kp GRAVE        &kp SLASH      &kp ASTERISK      &kp AT_SIGN  &kp CARET    &kp TILDE      &kp PRCNT   &kp LBRC              &kp RBRC               &trans  &trans
+&trans  &trans           &kp LESS_THAN  &kp GREATER_THAN  &kp DLLR     &kp PRCNT    &kp AMPERSAND  &kp DOLLAR  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans                &trans
+&trans  &kp EXCLAMATION  &kp MINUS      &kp PLUS          &kp EQUAL    &kp HASH     &kp PIPE       &kp COLON   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans                &trans
+&trans  &kp GRAVE        &kp SLASH      &kp ASTERISK      &kp AT_SIGN  &kp CARET    &kp TILDE      &kp PRCNT   &kp LBRC              &kp RBRC               &kp NON_US_BACKSLASH  &trans
                                         &trans            &trans       &trans       &trans         &trans      &trans
             >;
         };
@@ -144,10 +144,10 @@
         utils {
             display-name = "Utils";
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans    &trans  &trans        &trans         &trans     &trans  &trans
-&trans        &trans        &trans        &js_arrow_fn  &js_if_stmt   &trans    &trans  &git_push_ob  &git_commit_m  &git_pull  &trans  &trans
-&trans        &trans        &trans        &trans        &trans        &trans    &trans  &trans        &trans         &trans     &trans  &trans
-                                          &trans        &trans        &trans    &trans  &trans        &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans    &trans      &trans        &trans         &trans     &trans  &trans
+&trans        &trans        &trans        &js_arrow_fn  &js_if_stmt   &trans    &trans      &git_push_ob  &git_commit_m  &git_pull  &trans  &trans
+&trans        &trans        &trans        &trans        &trans        &trans    &trans      &trans        &trans         &trans     &trans  &trans
+                                          &trans        &trans        &trans    &kp RETURN  &trans        &trans
             >;
         };
     };
