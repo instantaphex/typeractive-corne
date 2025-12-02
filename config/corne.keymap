@@ -105,7 +105,7 @@
             display-name = "numbers";
             bindings = <
 &trans  &trans  &trans        &trans     &trans          &trans      &trans        &kp N7        &kp N8        &kp N9        &trans  &trans
-&trans  &trans  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &kp LGUI    &kp NUMBER_0  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans  &trans
+&trans  &trans  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &kp LGUI    &kp NUMBER_0  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans  &kp RETURN
 &trans  &trans  &trans        &trans     &trans          &trans      &trans        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans
                               &trans     &trans          &trans      &trans        &trans        &trans
             >;
@@ -114,10 +114,10 @@
         symbols {
             display-name = "Symbols";
             bindings = <
-&trans  &trans           &kp LESS_THAN  &kp GREATER_THAN  &kp DLLR     &kp PRCNT    &kp AMPERSAND  &kp DOLLAR  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans                &trans
-&trans  &kp EXCLAMATION  &kp MINUS      &kp PLUS          &kp EQUAL    &kp HASH     &kp PIPE       &kp COLON   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans                &trans
-&trans  &kp GRAVE        &kp SLASH      &kp ASTERISK      &kp AT_SIGN  &kp CARET    &kp TILDE      &kp PRCNT   &kp LBRC              &kp RBRC               &kp NON_US_BACKSLASH  &trans
-                                        &trans            &trans       &trans       &trans         &trans      &trans
+&trans  &trans           &kp LESS_THAN  &kp GREATER_THAN  &kp DLLR     &kp NON_US_BACKSLASH    &kp AMPERSAND  &kp DOLLAR  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans         &trans
+&trans  &kp EXCLAMATION  &kp MINUS      &kp PLUS          &kp EQUAL    &kp HASH                &kp PIPE       &kp COLON   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans         &kp RETURN
+&trans  &kp GRAVE        &kp SLASH      &kp ASTERISK      &kp AT_SIGN  &kp CARET               &kp TILDE      &kp PRCNT   &kp LBRC              &kp RBRC               &kp BACKSLASH  &trans
+                                        &trans            &trans       &trans                  &kp RETURN     &trans      &trans
             >;
         };
 
@@ -125,7 +125,7 @@
             display-name = "Nav";
             bindings = <
 &trans  &trans  &trans        &trans            &trans          &trans      &trans    &trans    &trans        &trans     &trans  &trans
-&trans  &trans  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp LGUI    &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans  &trans
+&trans  &trans  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp LGUI    &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans  &kp RETURN
 &trans  &trans  &trans        &trans            &trans          &trans      &trans    &trans    &trans        &trans     &trans  &trans
                               &trans            &trans          &trans      &trans    &trans    &trans
             >;
@@ -134,18 +134,18 @@
         function {
             display-name = "Function";
             bindings = <
-&trans  &trans  &trans    &trans     &trans     &trans      &kp F9  &kp F10  &kp F11  &kp F12  &trans  &trans
-&trans  &trans  &kp LALT  &kp LCTRL  &kp LSHFT  &kp LGUI    &kp F5  &kp F6   &kp F7   &kp F8   &trans  &trans
-&trans  &trans  &trans    &trans     &trans     &trans      &kp F1  &kp F2   &kp F3   &kp F4   &trans  &trans
-                          &trans     &trans     &trans      &trans  &trans   &trans
+&trans  &trans  &trans    &trans     &trans     &trans      &kp F9      &kp F10  &kp F11  &kp F12  &trans  &trans
+&trans  &trans  &kp LALT  &kp LCTRL  &kp LSHFT  &kp LGUI    &kp F5      &kp F6   &kp F7   &kp F8   &trans  &kp RETURN
+&trans  &trans  &trans    &trans     &trans     &trans      &kp F1      &kp F2   &kp F3   &kp F4   &trans  &trans
+                          &trans     &trans     &trans      &kp RETURN  &trans   &trans
             >;
         };
 
         utils {
             display-name = "Utils";
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans    &trans      &trans        &trans         &trans     &trans  &trans
-&trans        &trans        &trans        &js_arrow_fn  &js_if_stmt   &trans    &trans      &git_push_ob  &git_commit_m  &git_pull  &trans  &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans    &trans      &trans        &trans         &trans     &trans  &kp DELETE
+&trans        &trans        &trans        &js_arrow_fn  &js_if_stmt   &trans    &trans      &git_push_ob  &git_commit_m  &git_pull  &trans  &kp RETURN
 &trans        &trans        &trans        &trans        &trans        &trans    &trans      &trans        &trans         &trans     &trans  &trans
                                           &trans        &trans        &trans    &kp RETURN  &trans        &trans
             >;
