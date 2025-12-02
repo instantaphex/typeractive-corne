@@ -23,6 +23,7 @@ static inline lv_color_t bg_color(void) {
 #endif
 }
 
+// init label
 static void init_label(lv_draw_label_dsc_t *dsc, const lv_font_t *font, lv_text_align_t align,
                        lv_color_t color) {
     lv_draw_label_dsc_init(dsc);
