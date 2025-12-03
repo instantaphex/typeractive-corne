@@ -104,17 +104,17 @@
         numbers {
             display-name = "numbers";
             bindings = <
-&trans  &trans  &trans        &trans     &trans          &trans      &trans        &kp N7        &kp N8        &kp N9        &trans  &trans
-&trans  &trans  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &kp LGUI    &kp NUMBER_0  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans  &kp RETURN
-&trans  &trans  &trans        &trans     &trans          &trans      &trans        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans
-                              &trans     &trans          &trans      &trans        &trans        &trans
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4    &kp NUMBER_5    &kp NUMBER_6  &kp N7        &kp N8        &kp N9        &kp NUMBER_0  &kp DELETE
+&trans  &trans        &kp LEFT_ALT  &kp LCTRL     &kp LEFT_SHIFT  &kp LGUI        &kp NUMBER_0  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans        &kp RETURN
+&trans  &trans        &trans        &trans        &trans          &trans          &trans        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD    &trans
+                                    &trans        &trans          &trans          &trans        &trans        &trans
             >;
         };
 
         symbols {
             display-name = "Symbols";
             bindings = <
-&trans  &trans           &kp LESS_THAN  &kp GREATER_THAN  &kp DLLR     &kp NON_US_BACKSLASH    &kp AMPERSAND  &kp DOLLAR  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans         &trans
+&trans  &trans           &kp LESS_THAN  &kp GREATER_THAN  &kp DLLR     &kp NON_US_BACKSLASH    &kp AMPERSAND  &kp DOLLAR  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans         &kp DELETE
 &trans  &kp EXCLAMATION  &kp MINUS      &kp PLUS          &kp EQUAL    &kp HASH                &kp PIPE       &kp COLON   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans         &kp RETURN
 &trans  &kp GRAVE        &kp SLASH      &kp ASTERISK      &kp AT_SIGN  &kp CARET               &kp TILDE      &kp PRCNT   &kp LBRC              &kp RBRC               &kp BACKSLASH  &trans
                                         &trans            &trans       &trans                  &kp RETURN     &trans      &trans
@@ -124,7 +124,7 @@
         nav {
             display-name = "Nav";
             bindings = <
-&trans  &trans  &trans        &trans            &trans          &trans      &trans    &trans    &trans        &trans     &trans  &trans
+&trans  &trans  &trans        &trans            &trans          &trans      &trans    &kp HOME  &kp END       &trans     &trans  &kp DELETE
 &trans  &trans  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp LGUI    &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans  &kp RETURN
 &trans  &trans  &trans        &trans            &trans          &trans      &trans    &trans    &trans        &trans     &trans  &trans
                               &trans            &trans          &trans      &trans    &trans    &trans
@@ -134,7 +134,7 @@
         function {
             display-name = "Function";
             bindings = <
-&trans  &trans  &trans    &trans     &trans     &trans      &kp F9      &kp F10  &kp F11  &kp F12  &trans  &trans
+&trans  &trans  &trans    &trans     &trans     &trans      &kp F9      &kp F10  &kp F11  &kp F12  &trans  &kp DELETE
 &trans  &trans  &kp LALT  &kp LCTRL  &kp LSHFT  &kp LGUI    &kp F5      &kp F6   &kp F7   &kp F8   &trans  &kp RETURN
 &trans  &trans  &trans    &trans     &trans     &trans      &kp F1      &kp F2   &kp F3   &kp F4   &trans  &trans
                           &trans     &trans     &trans      &kp RETURN  &trans   &trans
